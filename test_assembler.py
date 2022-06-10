@@ -100,19 +100,19 @@ class AssemblerTestCase(TestCase):
         node.add_edge_to(node)
         self.assertEqual(1, node.get_edge_to_weight(node))
 
-    @pytest.mark.dbgraph
-    def test_dbgraph_correct(self):
-        kmers = {"AGT": 2, "GTC": 1, "TCA": 2, "GTG": 3}
-        graph = DBGraph()
-        graph.add_kmers(kmers)
-        self.assertEqual(3, graph.count_edges())
+#    @pytest.mark.dbgraph
+#    def test_dbgraph_correct(self):
+#        kmers = {"AGT": 2, "GTC": 1, "TCA": 2, "GTG": 3}
+#        graph = DBGraph()
+#        graph.add_kmers(kmers)
+#        self.assertEqual(3, graph.count_edges())
 
-    @pytest.mark.dbgraph
-    def test_dbgraph_wrongkmer(self):
-        kmers = {"AGT": 2, "GTC": 1, "TCAA": 2, "GTG": 3}
-        graph = DBGraph()
-        with pytest.raises(ValueError):
-            graph.add_kmers(kmers)
+#    @pytest.mark.dbgraph
+#    def test_dbgraph_wrongkmer(self):
+#        kmers = {"AGT": 2, "GTC": 1, "TCAA": 2, "GTG": 3}
+#        graph = DBGraph()
+#        with pytest.raises(ValueError):
+#            graph.add_kmers(kmers)
 
     @pytest.mark.toplevel
     def test_read_fasta(self):
